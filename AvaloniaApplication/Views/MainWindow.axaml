@@ -1,0 +1,28 @@
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:AvaloniaApplication.ViewModels"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="500"
+        x:Class="AvaloniaApplication.Views.MainWindow"
+        x:DataType="vm:MainWindowViewModel"
+        Icon="/Assets/avalonia-logo.ico"
+        Title="AvaloniaApplication"
+        Width="400"
+        Height="500">
+
+    <Design.DataContext>
+        <!-- This only sets the DataContext for the previewer in an IDE,
+             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
+        <vm:MainWindowViewModel/>
+    </Design.DataContext>
+    
+    <StackPanel Width="200" Margin="16" Spacing="10">
+        <TextBlock Name="TextBlockName"
+                   Text="Welcome to MammaMiaDev" 
+                   HorizontalAlignment="Center" 
+                   VerticalAlignment="Center"/>
+        <Button HorizontalAlignment="Center" Click="ButtonOnClick">CLICK ME</Button>
+    </StackPanel>
+
+</Window>
