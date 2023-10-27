@@ -1,6 +1,16 @@
-﻿namespace AvaloniaApplication.ViewModels;
+﻿using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.Input;
 
-public class MainWindowViewModel : ViewModelBase
+namespace AvaloniaApplication.ViewModels;
+
+public partial class MainWindowViewModel : ViewModelBase
 {
-    public string Greeting => "Welcome to Avalonia!";
+    [ObservableProperty]
+    private string _textBlockName = "Welcome to MammaMiaDev";
+    
+    [RelayCommand]
+    private void ButtonOnClick()
+    {
+        TextBlockName = "CLICKED";
+    }
 }

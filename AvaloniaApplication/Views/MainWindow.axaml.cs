@@ -9,9 +9,4 @@ public partial class MainWindow : Window
     {
         InitializeComponent();
     }
-
-    private void ButtonOnClick(object? sender, RoutedEventArgs e)
-    {
-        TextBlockName.Text = "CLICKED";
-    }
 }

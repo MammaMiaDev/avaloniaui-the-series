@@ -18,11 +18,10 @@
     </Design.DataContext>
     
     <StackPanel Width="200" Margin="16" Spacing="10">
-        <TextBlock Name="TextBlockName"
-                   Text="Welcome to MammaMiaDev" 
+        <TextBlock Text="{Binding TextBlockName}" 
                    HorizontalAlignment="Center" 
-                   VerticalAlignment="Center"/>
-        <Button HorizontalAlignment="Center" Click="ButtonOnClick">CLICK ME</Button>
+                   VerticalAlignment="Center" />
+        <Button HorizontalAlignment="Center" Command="{Binding ButtonOnClickCommand}">CLICK ME</Button>
     </StackPanel>
 
 </Window>
