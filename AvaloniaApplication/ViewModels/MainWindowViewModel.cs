@@ -33,6 +33,7 @@ public partial class MainWindowViewModel : ViewModelBase
         new ListItemTemplate(typeof(ButtonPageViewModel), "CursorHoverRegular"),
         new ListItemTemplate(typeof(TextPageViewModel), "TextNumberFormatRegular"),
         new ListItemTemplate(typeof(ValueSelectionPageViewModel), "CalendarCheckmarkRegular"),
+        new ListItemTemplate(typeof(ImagePageViewModel), "ImageRegular"),
     };
 
     [RelayCommand]
