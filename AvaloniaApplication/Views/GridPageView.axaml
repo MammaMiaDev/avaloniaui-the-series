@@ -1,0 +1,27 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:templates="clr-namespace:AvaloniaApplication.Templates"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
+             x:Class="AvaloniaApplication.Views.GridPageView">
+    <ScrollViewer>
+        <StackPanel Margin="20">
+            <TextBlock Margin="0 20" FontSize="20" FontWeight="Bold">Grids</TextBlock>
+
+            <TextBlock Margin="0 20" FontSize="15" FontWeight="Bold">Standard Grid</TextBlock>
+            <templates:ContentExample>
+                
+                <Grid ColumnDefinitions="Auto, *">
+                    <StackPanel Width="230" Spacing="5">
+                        <Button Click="Start_OnClick" Width="70" HorizontalContentAlignment="Center">START</Button>
+                        <Button Click="Stop_OnClick" Width="70" HorizontalContentAlignment="Center">STOP</Button>
+                    </StackPanel>
+                    <Grid Grid.Column="1" Name="MainGrid" Background="DimGray">
+                    </Grid>
+                </Grid>
+                
+            </templates:ContentExample>
+        </StackPanel>
+    </ScrollViewer>
+</UserControl>
