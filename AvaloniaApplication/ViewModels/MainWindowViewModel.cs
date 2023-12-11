@@ -4,6 +4,7 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using CommunityToolkit.Mvvm.ComponentModel;
+using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 
 namespace AvaloniaApplication.ViewModels;
@@ -22,7 +23,7 @@ public partial class MainWindowViewModel : ViewModelBase
     partial void OnSelectedListItemChanged(ListItemTemplate? value)
     {
         if (value is null) return;
-        var instance = Activator.CreateInstance(value.ModelType);
+        var instance = Ioc.Default.GetService(value.ModelType);
         if (instance is null) return;
         CurrentPage = (ViewModelBase)instance;
     }
