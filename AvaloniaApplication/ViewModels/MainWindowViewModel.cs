@@ -23,7 +23,11 @@ public partial class MainWindowViewModel : ViewModelBase
     partial void OnSelectedListItemChanged(ListItemTemplate? value)
     {
         if (value is null) return;
-        var instance = Ioc.Default.GetService(value.ModelType);
+
+        var instance = Design.IsDesignMode
+            ? Activator.CreateInstance(value.ModelType)
+            : Ioc.Default.GetService(value.ModelType);
+
         if (instance is null) return;
         CurrentPage = (ViewModelBase)instance;
     }

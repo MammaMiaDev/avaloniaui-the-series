@@ -44,5 +44,9 @@ public class ViewLocator : IDataTemplate
     private void RegisterViewFactory<TViewModel, TView>()
         where TViewModel : class
         where TView : Control
-        => _locator.Add(typeof(TViewModel), Ioc.Default.GetService<TView>);
+        => _locator.Add(
+            typeof(TViewModel), 
+            Design.IsDesignMode 
+                ? Activator.CreateInstance<TView> 
+                : Ioc.Default.GetService<TView>);
 }
