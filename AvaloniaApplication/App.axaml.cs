@@ -48,6 +48,7 @@ public partial class App : Application
     [Transient(typeof(ValueSelectionPageViewModel))]
     [Transient(typeof(ImagePageViewModel))]
     [Singleton(typeof(GridPageViewModel))]
+    [Singleton(typeof(DragAndDropPageViewModel))]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
     [Singleton(typeof(MainWindow))]
@@ -57,5 +58,6 @@ public partial class App : Application
     [Transient(typeof(ValueSelectionPageView))]
     [Transient(typeof(ImagePageView))]
     [Singleton(typeof(GridPageView))]
+    [Singleton(typeof(DragAndDropPageView))]
     internal static partial void ConfigureViews(IServiceCollection services);
 }

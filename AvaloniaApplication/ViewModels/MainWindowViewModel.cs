@@ -40,6 +40,7 @@ public partial class MainWindowViewModel : ViewModelBase
         new ListItemTemplate(typeof(ValueSelectionPageViewModel), "CalendarCheckmarkRegular"),
         new ListItemTemplate(typeof(ImagePageViewModel), "ImageRegular"),
         new ListItemTemplate(typeof(GridPageViewModel), "GridRegular"),
+        new ListItemTemplate(typeof(DragAndDropPageViewModel), "TapDoubleRegular"),
     };
 
     [RelayCommand]
