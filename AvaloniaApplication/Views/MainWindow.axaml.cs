@@ -1,3 +1,4 @@
+using AvaloniaApplication.Models;
 using FluentAvalonia.UI.Windowing;
 
 namespace AvaloniaApplication.Views;
@@ -10,5 +11,7 @@ public partial class MainWindow : AppWindow
 
         TitleBar.ExtendsContentIntoTitleBar = true;
         TitleBar.TitleBarHitTestType = TitleBarHitTestType.Complex;
+        
+        SplashScreen = new ComplexSplashScreen();
     }
 }

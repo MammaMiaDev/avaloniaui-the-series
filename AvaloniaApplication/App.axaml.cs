@@ -1,4 +1,3 @@
-using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
@@ -18,7 +17,7 @@ public partial class App : Application
         AvaloniaXamlLoader.Load(this);
     }
 
-    public override async void OnFrameworkInitializationCompleted()
+    public override void OnFrameworkInitializationCompleted()
     {
         var locator = new ViewLocator();
         DataTemplates.Add(locator);
@@ -32,32 +31,11 @@ public partial class App : Application
 
             Ioc.Default.ConfigureServices(provider);
 
-            var splashScreenVm = Ioc.Default.GetRequiredService<CustomSplashScreenViewModel>();
-            var splashScreen = (Window)locator.Build(splashScreenVm);
-            splashScreen.DataContext = splashScreenVm;
-            desktop.MainWindow = splashScreen;
-            splashScreen.Show();
-            try {
-                splashScreenVm.StartupMessage = "Searching for devices...";
-                await Task.Delay(1000, splashScreenVm.CancellationToken);
-                splashScreenVm.StartupMessage = "Connecting to device #1...";
-                await Task.Delay(2000, splashScreenVm.CancellationToken);
-                splashScreenVm.StartupMessage = "Configuring device...";
-                await Task.Delay(2000, splashScreenVm.CancellationToken);
-            }
-            catch (TaskCanceledException) {
-                splashScreen.Close();
-                return;
-            }
-
             var vm = Ioc.Default.GetService<MainWindowViewModel>();
             var view = (Window)locator.Build(vm);
             view.DataContext = vm;
 
             desktop.MainWindow = view;
-
-            view.Show();
-            splashScreen.Close();
         }
 
         base.OnFrameworkInitializationCompleted();

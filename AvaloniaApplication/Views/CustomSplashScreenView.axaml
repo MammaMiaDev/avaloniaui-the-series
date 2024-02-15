@@ -6,6 +6,7 @@
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="300"
         x:Class="AvaloniaApplication.Views.CustomSplashScreenView"
         Title="CustomSplashScreenView"
+        Icon="/Assets/logo_big_no_bg.ico"
         Width="300"
         Height="300"
         WindowStartupLocation="CenterScreen"

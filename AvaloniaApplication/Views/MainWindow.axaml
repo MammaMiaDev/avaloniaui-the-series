@@ -6,8 +6,9 @@
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
         x:Class="AvaloniaApplication.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
-        Icon="/Assets/logo_big_no_bg.png"
+        Icon="/Assets/logo_big_no_bg.ico"
         Title="AvaloniaApplication"
+        WindowStartupLocation="CenterScreen"
         Width="1100"
         Height="700">
 
