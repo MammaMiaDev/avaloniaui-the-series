@@ -10,5 +10,5 @@
         WindowStartupLocation="CenterScreen"
         Width="1100"
         Height="700">
-    <views:MainView />
+  <views:MainView />
 </Window>
