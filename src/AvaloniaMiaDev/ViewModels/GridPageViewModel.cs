@@ -1,4 +1,4 @@
-﻿namespace AvaloniaApplication.ViewModels;
+﻿namespace AvaloniaMiaDev.ViewModels;
 
 public class GridPageViewModel : ViewModelBase
 {

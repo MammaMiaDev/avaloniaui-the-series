@@ -1,3 +1,3 @@
-﻿namespace AvaloniaApplication.ViewModels;
+﻿namespace AvaloniaMiaDev.ViewModels;
 
 public class HomePageViewModel : ViewModelBase { }

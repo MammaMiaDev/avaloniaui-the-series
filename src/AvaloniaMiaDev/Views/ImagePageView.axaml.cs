@@ -1,6 +1,6 @@
 ﻿using Avalonia.Controls;
 
-namespace AvaloniaApplication.Views;
+namespace AvaloniaMiaDev.Views;
 
 public partial class ImagePageView : UserControl
 {

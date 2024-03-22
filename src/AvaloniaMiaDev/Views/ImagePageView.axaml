@@ -2,17 +2,18 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:vm="clr-namespace:AvaloniaApplication.ViewModels"
-             xmlns:conv="clr-namespace:AvaloniaApplication.Converters"
+             xmlns:vm="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:converters="clr-namespace:AvaloniaMiaDev.Converters"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaApplication.Views.ImagePageView"
-             x:DataType="vm:ImagePageViewModel">
+             x:Class="AvaloniaMiaDev.Views.ImagePageView"
+             x:DataType="viewModels:ImagePageViewModel">
     <UserControl.Resources>
-        <conv:BitmapAssetValueConverter x:Key="BitmapConverter"/>
+        <converters:BitmapAssetValueConverter x:Key="BitmapConverter"/>
     </UserControl.Resources>
     
     <Design.DataContext>
-        <vm:ImagePageViewModel />
+        <viewModels:ImagePageViewModel />
     </Design.DataContext>
 
     <ScrollViewer>

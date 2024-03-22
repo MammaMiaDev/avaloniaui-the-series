@@ -4,7 +4,7 @@ using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace AvaloniaApplication.ViewModels;
+namespace AvaloniaMiaDev.ViewModels;
 
 public partial class DragAndDropPageViewModel : ViewModelBase
 {

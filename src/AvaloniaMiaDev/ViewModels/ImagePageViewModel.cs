@@ -1,8 +1,8 @@
 ﻿using System.Threading.Tasks;
 using Avalonia.Media.Imaging;
-using AvaloniaApplication.Helpers;
+using AvaloniaMiaDev.Helpers;
 
-namespace AvaloniaApplication.ViewModels;
+namespace AvaloniaMiaDev.ViewModels;
 
 public class ImagePageViewModel : ViewModelBase
 {

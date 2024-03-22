@@ -2,9 +2,10 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:viewModels="clr-namespace:AvaloniaApplication.ViewModels"
+        xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
+        xmlns:viewModels1="clr-namespace:AvaloniaMiaDev.ViewModels"
         mc:Ignorable="d" d:DesignWidth="300" d:DesignHeight="300"
-        x:Class="AvaloniaApplication.Views.CustomSplashScreenView"
+        x:Class="AvaloniaMiaDev.Views.CustomSplashScreenView"
         Title="CustomSplashScreenView"
         Icon="/Assets/logo_big_no_bg.ico"
         Width="300"
@@ -12,7 +13,7 @@
         WindowStartupLocation="CenterScreen"
         SystemDecorations="None"
         Topmost="True"
-        x:DataType="viewModels:CustomSplashScreenViewModel">
+        x:DataType="viewModels1:CustomSplashScreenViewModel">
     <Border BorderBrush="Black" BorderThickness="2">
         <Grid RowDefinitions="*,Auto" ColumnDefinitions="*,Auto">
             <Label Grid.Row="0"

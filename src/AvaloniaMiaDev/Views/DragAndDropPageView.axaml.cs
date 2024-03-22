@@ -4,9 +4,9 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
-using AvaloniaApplication.ViewModels;
+using AvaloniaMiaDev.ViewModels;
 
-namespace AvaloniaApplication.Views;
+namespace AvaloniaMiaDev.Views;
 
 public partial class DragAndDropPageView : UserControl
 {

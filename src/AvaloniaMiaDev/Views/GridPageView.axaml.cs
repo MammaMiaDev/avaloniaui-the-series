@@ -5,7 +5,7 @@ using Avalonia.Controls.Shapes;
 using Avalonia.Interactivity;
 using Avalonia.Media;
 
-namespace AvaloniaApplication.Views;
+namespace AvaloniaMiaDev.Views;
 
 public partial class GridPageView : UserControl
 {

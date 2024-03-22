@@ -5,7 +5,7 @@ using Avalonia.Data.Converters;
 using Avalonia.Media.Imaging;
 using Avalonia.Platform;
 
-namespace AvaloniaApplication.Converters;
+namespace AvaloniaMiaDev.Converters;
 
 /// <summary>
 /// <para>

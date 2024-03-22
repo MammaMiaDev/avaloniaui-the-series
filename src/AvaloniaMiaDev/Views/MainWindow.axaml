@@ -1,11 +1,12 @@
 <Window xmlns="https://github.com/avaloniaui"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:vm="using:AvaloniaApplication.ViewModels"
+        xmlns:vm="using:AvaloniaMiaDev.ViewModels"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
         mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="700"
-        x:Class="AvaloniaApplication.Views.MainWindow"
-        x:DataType="vm:MainWindowViewModel"
+        x:Class="AvaloniaMiaDev.Views.MainWindow"
+        x:DataType="viewModels:MainWindowViewModel"
         Icon="/Assets/logo_big_no_bg.ico"
         Title="AvaloniaMiaDev"
         WindowStartupLocation="CenterScreen"
@@ -13,7 +14,7 @@
         Height="700">
 
     <Design.DataContext>
-        <vm:MainWindowViewModel/>
+        <viewModels:MainWindowViewModel/>
     </Design.DataContext>
     
     <Grid RowDefinitions="Auto, *">
@@ -47,7 +48,7 @@
                             </Style>
                         </ListBox.Styles>
                         <ListBox.ItemTemplate>
-                            <DataTemplate DataType="{x:Type vm:ListItemTemplate}">
+                            <DataTemplate DataType="{x:Type viewModels:ListItemTemplate}">
                                 <StackPanel Spacing="17" Orientation="Horizontal">
                                     <PathIcon Data="{Binding ListItemIcon}" Width="14" />
                                     <TextBlock Text="{Binding Label}"/>

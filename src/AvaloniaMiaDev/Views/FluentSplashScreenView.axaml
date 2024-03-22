@@ -3,7 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
-             x:Class="AvaloniaApplication.Views.FluentSplashScreenView">
+             x:Class="AvaloniaMiaDev.Views.FluentSplashScreenView">
     <Panel Background="#1e1e1e">
         <StackPanel Spacing="10"
                     VerticalAlignment="Center">

@@ -2,13 +2,13 @@ using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
-using AvaloniaApplication.ViewModels;
-using AvaloniaApplication.Views;
+using AvaloniaMiaDev.ViewModels;
+using AvaloniaMiaDev.Views;
 using CommunityToolkit.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.Extensions.DependencyInjection;
 
-namespace AvaloniaApplication;
+namespace AvaloniaMiaDev;
 
 public partial class App : Application
 {

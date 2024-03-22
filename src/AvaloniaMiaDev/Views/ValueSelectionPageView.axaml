@@ -2,11 +2,12 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-             xmlns:templates="clr-namespace:AvaloniaApplication.Templates"
-             xmlns:vm="clr-namespace:AvaloniaApplication.ViewModels"
+             xmlns:vm="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:templates="clr-namespace:AvaloniaMiaDev.Templates"
              mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
-             x:Class="AvaloniaApplication.Views.ValueSelectionPageView"
-             x:DataType="vm:ValueSelectionPageViewModel">
+             x:Class="AvaloniaMiaDev.Views.ValueSelectionPageView"
+             x:DataType="viewModels:ValueSelectionPageViewModel">
     <ScrollViewer>
         <StackPanel Margin="20">
             <TextBlock Margin="0 20" FontSize="20" FontWeight="Bold">Text display and editing</TextBlock>

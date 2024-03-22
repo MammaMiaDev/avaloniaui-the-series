@@ -1,7 +1,7 @@
-using AvaloniaApplication.Models;
+using AvaloniaMiaDev.Models;
 using FluentAvalonia.UI.Windowing;
 
-namespace AvaloniaApplication.Views;
+namespace AvaloniaMiaDev.Views;
 
 public partial class MainWindow : AppWindow
 {

@@ -8,7 +8,7 @@
         <AvaloniaUseCompiledBindingsByDefault>true</AvaloniaUseCompiledBindingsByDefault>
         <LangVersion>latest</LangVersion>
         <ApplicationIcon>./Assets/logo_big_no_bg.ico</ApplicationIcon>
-        <RootNamespace>AvaloniaApplication</RootNamespace>
+        <RootNamespace>AvaloniaMiaDev</RootNamespace>
     </PropertyGroup>
 
     <ItemGroup>

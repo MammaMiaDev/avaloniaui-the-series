@@ -1,7 +1,7 @@
 ﻿using System.Threading;
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace AvaloniaApplication.ViewModels;
+namespace AvaloniaMiaDev.ViewModels;
 
 public partial class CustomSplashScreenViewModel : ViewModelBase
 {

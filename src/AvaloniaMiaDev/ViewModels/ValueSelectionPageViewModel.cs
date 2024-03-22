@@ -1,6 +1,6 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace AvaloniaApplication.ViewModels;
+namespace AvaloniaMiaDev.ViewModels;
 
 public partial class ValueSelectionPageViewModel : ViewModelBase
 {

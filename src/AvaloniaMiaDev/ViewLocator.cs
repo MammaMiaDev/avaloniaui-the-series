@@ -2,12 +2,12 @@ using System;
 using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
-using AvaloniaApplication.ViewModels;
-using AvaloniaApplication.Views;
+using AvaloniaMiaDev.ViewModels;
+using AvaloniaMiaDev.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 
-namespace AvaloniaApplication;
+namespace AvaloniaMiaDev;
 
 public class ViewLocator : IDataTemplate
 {

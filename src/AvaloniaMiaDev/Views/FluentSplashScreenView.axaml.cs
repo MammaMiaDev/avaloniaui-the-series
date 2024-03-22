@@ -3,7 +3,7 @@ using System.Threading.Tasks;
 using Avalonia.Controls;
 using Avalonia.Threading;
 
-namespace AvaloniaApplication.Views;
+namespace AvaloniaMiaDev.Views;
 
 public partial class FluentSplashScreenView : UserControl
 {

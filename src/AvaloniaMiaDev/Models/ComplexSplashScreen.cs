@@ -1,10 +1,10 @@
 ﻿using System.Threading;
 using System.Threading.Tasks;
 using Avalonia.Media;
-using AvaloniaApplication.Views;
+using AvaloniaMiaDev.Views;
 using FluentAvalonia.UI.Windowing;
 
-namespace AvaloniaApplication.Models;
+namespace AvaloniaMiaDev.Models;
 
 public class ComplexSplashScreen : IApplicationSplashScreen
 {
