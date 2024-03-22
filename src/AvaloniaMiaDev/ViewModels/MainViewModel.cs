@@ -12,7 +12,7 @@ namespace AvaloniaMiaDev.ViewModels;
 public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
-    private bool _isPaneOpen = true;
+    private bool _isPaneOpen;
 
     [ObservableProperty] 
     private ViewModelBase _currentPage = new HomePageViewModel();

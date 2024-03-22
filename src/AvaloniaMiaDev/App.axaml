@@ -1,7 +1,6 @@
 <Application xmlns="https://github.com/avaloniaui"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              x:Class="AvaloniaMiaDev.App"
-             xmlns:sty="using:FluentAvalonia.Styling"
              xmlns:avaloniaMiaDev="clr-namespace:AvaloniaMiaDev"
              RequestedThemeVariant="Dark">
 
@@ -10,7 +9,7 @@
     </Application.DataTemplates>
   
     <Application.Styles>
-        <sty:FluentAvaloniaTheme PreferUserAccentColor="True" />
+        <FluentTheme />
         <StyleInclude Source="avares://AvaloniaMiaDev/Assets/Icons.axaml" />
         <StyleInclude Source="avares://AvaloniaMiaDev/Templates/ContentExample.axaml" />
     </Application.Styles>
