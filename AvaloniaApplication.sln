@@ -4,6 +4,16 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaMiaDev", "src\Avalo
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1AA1C9C6-90AF-4BFB-ABA2-B433E9766B0F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaMiaDev.Android", "src\AvaloniaMiaDev.Android\AvaloniaMiaDev.Android.csproj", "{63DAAA66-AF92-4170-9F89-6C2846B8E389}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaMiaDev.Desktop", "src\AvaloniaMiaDev.Desktop\AvaloniaMiaDev.Desktop.csproj", "{12649311-9B1B-4EDF-8917-4609499D70BB}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{82C6A0B4-5014-4BE4-9F52-7DC1989134E3}"
+	ProjectSection(SolutionItems) = preProject
+		Directory.Build.props = Directory.Build.props
+		.editorconfig = .editorconfig
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -14,8 +24,18 @@ Global
 		{00505DCC-588E-4E46-8F91-2AF6A88CBC78}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{00505DCC-588E-4E46-8F91-2AF6A88CBC78}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{00505DCC-588E-4E46-8F91-2AF6A88CBC78}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63DAAA66-AF92-4170-9F89-6C2846B8E389}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63DAAA66-AF92-4170-9F89-6C2846B8E389}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63DAAA66-AF92-4170-9F89-6C2846B8E389}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63DAAA66-AF92-4170-9F89-6C2846B8E389}.Release|Any CPU.Build.0 = Release|Any CPU
+		{12649311-9B1B-4EDF-8917-4609499D70BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{12649311-9B1B-4EDF-8917-4609499D70BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{12649311-9B1B-4EDF-8917-4609499D70BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{12649311-9B1B-4EDF-8917-4609499D70BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{00505DCC-588E-4E46-8F91-2AF6A88CBC78} = {1AA1C9C6-90AF-4BFB-ABA2-B433E9766B0F}
+		{63DAAA66-AF92-4170-9F89-6C2846B8E389} = {1AA1C9C6-90AF-4BFB-ABA2-B433E9766B0F}
+		{12649311-9B1B-4EDF-8917-4609499D70BB} = {1AA1C9C6-90AF-4BFB-ABA2-B433E9766B0F}
 	EndGlobalSection
 EndGlobal

@@ -15,7 +15,7 @@ public class ViewLocator : IDataTemplate
 
     public ViewLocator()
     {
-        RegisterViewFactory<MainWindowViewModel, MainWindow>();
+        RegisterViewFactory<MainViewModel, MainWindow>();
         RegisterViewFactory<HomePageViewModel, HomePageView>();
         RegisterViewFactory<ButtonPageViewModel, ButtonPageView>();
         RegisterViewFactory<TextPageViewModel, TextPageView>();

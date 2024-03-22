@@ -9,7 +9,7 @@ using CommunityToolkit.Mvvm.Input;
 
 namespace AvaloniaMiaDev.ViewModels;
 
-public partial class MainWindowViewModel : ViewModelBase
+public partial class MainViewModel : ViewModelBase
 {
     [ObservableProperty]
     private bool _isPaneOpen = true;

@@ -22,26 +22,30 @@ public partial class App : Application
         var locator = new ViewLocator();
         DataTemplates.Add(locator);
 
+        var services = new ServiceCollection();
+        ConfigureViewModels(services);
+        ConfigureViews(services);
+        var provider = services.BuildServiceProvider();
+
+        Ioc.Default.ConfigureServices(provider);
+
+        var vm = Ioc.Default.GetService<MainViewModel>();
+        // var view = (Window)locator.Build(vm);
+        // view.DataContext = vm;
+
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            var services = new ServiceCollection();
-            ConfigureViewModels(services);
-            ConfigureViews(services);
-            var provider = services.BuildServiceProvider();
-
-            Ioc.Default.ConfigureServices(provider);
-
-            var vm = Ioc.Default.GetService<MainWindowViewModel>();
-            var view = (Window)locator.Build(vm);
-            view.DataContext = vm;
-
-            desktop.MainWindow = view;
+            desktop.MainWindow = new MainWindow { DataContext = vm };
+        }
+        else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
+        {
+            singleViewPlatform.MainView = new MainView { DataContext = vm };
         }
 
         base.OnFrameworkInitializationCompleted();
     }
 
-    [Singleton(typeof(MainWindowViewModel))]
+    [Singleton(typeof(MainViewModel))]
     [Transient(typeof(HomePageViewModel))]
     [Transient(typeof(ButtonPageViewModel))]
     [Transient(typeof(TextPageViewModel))]
