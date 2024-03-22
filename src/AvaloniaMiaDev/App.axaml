@@ -11,7 +11,7 @@
   
     <Application.Styles>
         <sty:FluentAvaloniaTheme PreferUserAccentColor="True" />
-        <StyleInclude Source="avares://AvaloniaApplication/Assets/Icons.axaml" />
-        <StyleInclude Source="avares://AvaloniaApplication/Templates/ContentExample.axaml" />
+        <StyleInclude Source="avares://AvaloniaMiaDev/Assets/Icons.axaml" />
+        <StyleInclude Source="avares://AvaloniaMiaDev/Templates/ContentExample.axaml" />
     </Application.Styles>
 </Application>

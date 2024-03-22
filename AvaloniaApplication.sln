@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaApplication", "src\AvaloniaApplication\AvaloniaApplication.csproj", "{00505DCC-588E-4E46-8F91-2AF6A88CBC78}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AvaloniaMiaDev", "src\AvaloniaMiaDev\AvaloniaMiaDev.csproj", "{00505DCC-588E-4E46-8F91-2AF6A88CBC78}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "src", "src", "{1AA1C9C6-90AF-4BFB-ABA2-B433E9766B0F}"
 EndProject
