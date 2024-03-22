@@ -29,13 +29,13 @@ public partial class App : Application
 
         Ioc.Default.ConfigureServices(provider);
 
-        var vm = Ioc.Default.GetService<MainViewModel>();
+        var vm = Ioc.Default.GetRequiredService<MainViewModel>();
         // var view = (Window)locator.Build(vm);
         // view.DataContext = vm;
 
         if (ApplicationLifetime is IClassicDesktopStyleApplicationLifetime desktop)
         {
-            desktop.MainWindow = new MainWindow { DataContext = vm };
+            desktop.MainWindow = new MainWindow(vm);
         }
         else if (ApplicationLifetime is ISingleViewApplicationLifetime singleViewPlatform)
         {
@@ -62,8 +62,8 @@ public partial class App : Application
     [Transient(typeof(TextPageView))]
     [Transient(typeof(ValueSelectionPageView))]
     [Transient(typeof(ImagePageView))]
-    [Singleton(typeof(GridPageView))]
-    [Singleton(typeof(DragAndDropPageView))]
-    [Singleton(typeof(CustomSplashScreenView))]
+    [Transient(typeof(GridPageView))]
+    [Transient(typeof(DragAndDropPageView))]
+    [Transient(typeof(CustomSplashScreenView))]
     internal static partial void ConfigureViews(IServiceCollection services);
 }
