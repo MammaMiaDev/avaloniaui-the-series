@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using System;
+using System.Threading.Tasks;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Controls.Shapes;
@@ -9,29 +10,32 @@ namespace AvaloniaMiaDev.Views;
 
 public partial class GridPageView : UserControl
 {
-    private const int Rows = 10;
-    private const int Cols = 10;
+    private readonly int _rows;
+    private readonly int _cols;
     private readonly IBrush _baseColor = Brushes.LightGray;
     private bool _stop;
 
     public GridPageView()
     {
         InitializeComponent();
+
+        _rows = _cols = OperatingSystem.IsAndroid() || OperatingSystem.IsIOS() ? 6 : 10;
+
         InitGrid();
     }
 
     private void InitGrid()
     {
-        MainGrid.Height = 500;
-        MainGrid.Width = 500;
+        MainGrid.Height = 50 * _rows;
+        MainGrid.Width = 50 * _cols;
 
         MainGrid.ShowGridLines = true;
 
-        for (var j = 0; j < Rows; j++)
+        for (var j = 0; j < _rows; j++)
         {
             MainGrid.RowDefinitions.Add(new RowDefinition(GridLength.Star));
             MainGrid.ColumnDefinitions.Add(new ColumnDefinition(GridLength.Star));
-            for (var i = 0; i < Cols; i++)
+            for (var i = 0; i < _cols; i++)
             {
                 var child = new Rectangle
                 {

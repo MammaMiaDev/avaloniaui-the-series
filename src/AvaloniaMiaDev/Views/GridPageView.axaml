@@ -12,12 +12,12 @@
       <TextBlock Margin="0 20" FontSize="15" FontWeight="Bold">Standard Grid</TextBlock>
       <templates:ContentExample>
 
-        <Grid ColumnDefinitions="Auto, *">
-          <StackPanel Width="230" Spacing="5">
+        <Grid RowDefinitions="Auto, *">
+          <StackPanel Spacing="5" Margin="0 0 0 10">
             <Button Click="Start_OnClick" Width="70" HorizontalContentAlignment="Center">START</Button>
             <Button Click="Stop_OnClick" Width="70" HorizontalContentAlignment="Center">STOP</Button>
           </StackPanel>
-          <Grid Grid.Column="1" Name="MainGrid" Background="DimGray">
+          <Grid Grid.Row="1" Name="MainGrid" Background="DimGray">
           </Grid>
         </Grid>
 
