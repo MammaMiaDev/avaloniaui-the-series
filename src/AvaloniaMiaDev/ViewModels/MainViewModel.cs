@@ -14,7 +14,7 @@ public partial class MainViewModel : ViewModelBase
     [ObservableProperty]
     private bool _isPaneOpen;
 
-    [ObservableProperty] 
+    [ObservableProperty]
     private ViewModelBase _currentPage = new HomePageViewModel();
 
     [ObservableProperty]

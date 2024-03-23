@@ -16,7 +16,7 @@ public partial class DragAndDropPageView : UserControl
     public DragAndDropPageView()
     {
         InitializeComponent();
-        
+
         AddHandler(DragDrop.DragOverEvent, DragOver);
         AddHandler(DragDrop.DropEvent, Drop);
     }
@@ -42,12 +42,12 @@ public partial class DragAndDropPageView : UserControl
         var offsetX = mousePos.X - ghostPos.X;
         var offsetY = mousePos.Y - ghostPos.Y + _mouseOffset.X;
         GhostItem.RenderTransform = new TranslateTransform(offsetX, offsetY);
-        
+
         if (DataContext is not DragAndDropPageViewModel vm) return;
         vm.StartDrag(taskItem);
 
         GhostItem.IsVisible = true;
-        
+
         var dragData = new DataObject();
         dragData.Set(DragAndDropPageViewModel.CustomFormat, taskItem);
         var result = await DragDrop.DoDragDrop(e, dragData, DragDropEffects.Move);
@@ -63,7 +63,7 @@ public partial class DragAndDropPageView : UserControl
         var offsetY = currentPosition.Y - _ghostPosition.Y;
 
         GhostItem.RenderTransform = new TranslateTransform(offsetX, offsetY);
-        
+
         // set drag cursor icon
         e.DragEffects = DragDropEffects.Move;
         if (DataContext is not DragAndDropPageViewModel vm) return;

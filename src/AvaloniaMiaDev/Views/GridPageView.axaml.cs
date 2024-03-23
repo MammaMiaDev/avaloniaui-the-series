@@ -44,7 +44,7 @@ public partial class GridPageView : UserControl
             }
         }
     }
-    
+
     private async void Start_OnClick(object? sender, RoutedEventArgs e)
     {
         _stop = false;
@@ -60,7 +60,7 @@ public partial class GridPageView : UserControl
         }
         if (previous is not null) previous.Fill = _baseColor;
     }
-    
+
     private void Stop_OnClick(object? sender, RoutedEventArgs e)
     {
         _stop = true;

@@ -8,7 +8,7 @@ public partial class ButtonPageView : UserControl
     {
         InitializeComponent();
     }
-    
+
     // TODO: replace with MVVM pattern (https://github.com/AvaloniaUI/Avalonia/issues/3766)
     public void OnSpin(object sender, SpinEventArgs e)
     {

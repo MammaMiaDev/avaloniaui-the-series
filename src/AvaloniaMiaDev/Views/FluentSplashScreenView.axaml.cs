@@ -11,7 +11,7 @@ public partial class FluentSplashScreenView : UserControl
     {
         InitializeComponent();
     }
-    
+
     public async Task InitApp()
     {
         var start = DateTime.Now.Ticks;

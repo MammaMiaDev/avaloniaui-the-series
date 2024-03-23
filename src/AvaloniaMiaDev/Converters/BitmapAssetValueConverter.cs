@@ -43,7 +43,7 @@ public class BitmapAssetValueConverter : IValueConverter
         }
 
         var asset = AssetLoader.Open(uri);
-        
+
         return new Bitmap(asset);
     }
 
