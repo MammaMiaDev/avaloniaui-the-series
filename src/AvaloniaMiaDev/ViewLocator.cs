@@ -42,13 +42,13 @@ public class ViewLocator : IDataTemplate
     {
         return data is ObservableObject;
     }
-    
+
     private void RegisterViewFactory<TViewModel, TView>()
         where TViewModel : class
         where TView : Control
         => _locator.Add(
-            typeof(TViewModel), 
-            Design.IsDesignMode 
-                ? Activator.CreateInstance<TView> 
+            typeof(TViewModel),
+            Design.IsDesignMode
+                ? Activator.CreateInstance<TView>
                 : Ioc.Default.GetService<TView>);
 }
