@@ -1,0 +1,21 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:templates="clr-namespace:AvaloniaMiaDev.Templates"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="450"
+             x:Class="AvaloniaMiaDev.Views.TextPageView"
+             x:DataType="vm:TextPageViewModel">
+  <ScrollViewer>
+    <StackPanel Margin="20">
+      <TextBlock Margin="0 20" FontSize="20" FontWeight="Bold">Text display and editing</TextBlock>
+      <CheckBox Content="Disable controls" IsChecked="{Binding !IsTextEnabled}"></CheckBox>
+
+      <TextBlock Margin="0 20" FontSize="15" FontWeight="Bold">Standard text block</TextBlock>
+      <templates:ContentExample>
+        <TextBlock IsEnabled="{Binding IsTextEnabled}">Some text</TextBlock>
+      </templates:ContentExample>
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

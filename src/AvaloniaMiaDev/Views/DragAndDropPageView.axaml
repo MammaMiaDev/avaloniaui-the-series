@@ -1,0 +1,106 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="800" d:DesignHeight="600"
+             x:Class="AvaloniaMiaDev.Views.DragAndDropPageView"
+             x:DataType="viewModels:DragAndDropPageViewModel">
+
+  <Design.DataContext>
+    <viewModels:DragAndDropPageViewModel />
+  </Design.DataContext>
+
+  <ScrollViewer>
+    <StackPanel Margin="20" Name="MainContainer" DragDrop.AllowDrop="True" Background="Transparent">
+      <TextBlock Margin="0 20" FontSize="20" FontWeight="Bold">Drag and Drop</TextBlock>
+      <Button Content="Add Random Task" VerticalAlignment="Top" Command="{Binding AddTaskCommand}" Margin="0 0 0 20" />
+      <StackPanel Orientation="Horizontal" Spacing="25" HorizontalAlignment="Center">
+
+        <!-- Todos column -->
+        <Border Background="DarkGray" Height="450" Width="200" Name="TodoItems"
+                CornerRadius="5">
+          <StackPanel Orientation="Vertical">
+            <TextBlock Text="TODO" TextAlignment="Center" Foreground="Black" FontWeight="Bold"
+                       FontSize="22" />
+            <!-- Tickets -->
+            <ItemsRepeater ItemsSource="{Binding TodoTasks}" Margin="15">
+              <ItemsRepeater.Layout>
+                <StackLayout Spacing="10" />
+              </ItemsRepeater.Layout>
+              <ItemsRepeater.ItemTemplate>
+                <DataTemplate>
+
+                  <!-- Ticket template -->
+                  <Border CornerRadius="5" Margin="4 0 4 5" PointerPressed="OnPointerPressed"
+                          Padding="10" Background="White"
+                          BoxShadow="1 2 3 0 Black"
+                          BorderBrush="Black"
+                          BorderThickness="1.5">
+                    <StackPanel Orientation="Vertical">
+                      <TextBlock Text="{Binding Title}"
+                                 Foreground="Black"
+                                 FontWeight="Medium" />
+                    </StackPanel>
+                  </Border>
+
+                </DataTemplate>
+              </ItemsRepeater.ItemTemplate>
+            </ItemsRepeater>
+          </StackPanel>
+        </Border>
+        <!-- Todos column -->
+
+        <!-- Done column -->
+        <Border Background="DarkGray" Height="450" Width="200" Name="DoneItems"
+                CornerRadius="5">
+          <StackPanel Orientation="Vertical">
+            <TextBlock Text="DONE" TextAlignment="Center" Foreground="Black" FontWeight="Bold"
+                       FontSize="22" />
+            <!-- Tickets -->
+            <ItemsRepeater ItemsSource="{Binding DoneTasks}" Margin="15">
+              <ItemsRepeater.Layout>
+                <StackLayout Spacing="10" />
+              </ItemsRepeater.Layout>
+              <ItemsRepeater.ItemTemplate>
+                <DataTemplate>
+
+                  <!-- Ticket template -->
+                  <Border CornerRadius="5" Margin="4 0 4 5" PointerPressed="OnPointerPressed"
+                          Padding="10" Background="White"
+                          BoxShadow="1 2 3 0 Black"
+                          BorderBrush="Black"
+                          BorderThickness="1.5">
+                    <StackPanel Orientation="Vertical">
+                      <TextBlock Text="{Binding Title}"
+                                 Foreground="Black"
+                                 FontWeight="Medium" />
+                    </StackPanel>
+                  </Border>
+
+                </DataTemplate>
+              </ItemsRepeater.ItemTemplate>
+            </ItemsRepeater>
+          </StackPanel>
+        </Border>
+        <!-- Done column -->
+
+      </StackPanel>
+
+      <!-- Our ghost task -->
+      <Border CornerRadius="5" Name="GhostItem"
+              Padding="10" Background="White"
+              BoxShadow="1 2 3 0 Black"
+              BorderBrush="Black" Opacity="0.6"
+              BorderThickness="1.5"
+              Width="100" Height="45">
+        <StackPanel Orientation="Vertical">
+          <TextBlock Text="{Binding DraggingTaskItem.Title, FallbackValue='TEXT'}"
+                     Foreground="Black"
+                     FontWeight="Medium" />
+        </StackPanel>
+      </Border>
+
+    </StackPanel>
+  </ScrollViewer>
+</UserControl>

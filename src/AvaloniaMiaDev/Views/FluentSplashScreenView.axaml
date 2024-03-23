@@ -1,0 +1,25 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d" d:DesignWidth="400" d:DesignHeight="400"
+             x:Class="AvaloniaMiaDev.Views.FluentSplashScreenView">
+  <Panel Background="#1e1e1e">
+    <StackPanel Spacing="10"
+                VerticalAlignment="Center">
+      <Image Source="/Assets/logo_big_no_bg.png"
+             Width="250"
+             Height="250" />
+
+      <ProgressBar Name="ProgressBar1"
+                   MaxWidth="200"
+                   Margin="0" />
+
+      <TextBlock Text="Loading..."
+                 Name="LoadingText"
+                 HorizontalAlignment="Center"
+                 FontSize="20"
+                 Foreground="White" />
+    </StackPanel>
+  </Panel>
+</UserControl>
