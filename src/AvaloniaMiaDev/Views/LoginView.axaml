@@ -1,0 +1,50 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:vm="clr-namespace:AvaloniaMiaDev.ViewModels"
+             mc:Ignorable="d" d:DesignWidth="540" d:DesignHeight="960"
+             x:Class="AvaloniaMiaDev.Views.LoginView"
+             x:DataType="vm:LoginViewModel">
+  <DockPanel Margin="10">
+    <!-- TOP -->
+    <TextBlock Text="Login" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"
+               Margin="0 10 0 20"
+               FontSize="26" FontWeight="Medium" />
+
+    <!-- BOTTOM -->
+    <StackPanel DockPanel.Dock="Bottom">
+      <TextBlock Text="{Binding ErrorMessage}"
+                 HorizontalAlignment="Center" Foreground="IndianRed" FontSize="18" />
+      <Button Content="LOGIN" Background="#146059"
+              HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" VerticalContentAlignment="Center"
+              Margin="0 10 0 0" Height="50" FontSize="18"
+              Command="{Binding LoginCommand}" />
+    </StackPanel>
+
+    <!-- CONTENT -->
+    <StackPanel Spacing="10">
+      <TextBox
+        Padding="10" Margin="5" Height="50" VerticalContentAlignment="Center"
+        Watermark="Username" AcceptsReturn="False"
+        FontSize="16" MaxLines="1"
+        Text="{Binding Username}">
+      </TextBox>
+      <TextBox
+        Padding="10" Margin="5" Height="50" VerticalContentAlignment="Center"
+        Watermark="Password" AcceptsReturn="False"
+        FontSize="16" MaxLines="1"
+        Text="{Binding Password}" PasswordChar="*">
+      </TextBox>
+      <ComboBox ItemsSource="{Binding AvailableUsers}" SelectedItem="{Binding SelectedUser}"
+                Margin="5" Width="300" Height="40" VerticalContentAlignment="Center"
+                PlaceholderText="Select a user" HorizontalAlignment="Center">
+        <ComboBox.ItemTemplate>
+          <DataTemplate>
+            <TextBlock Text="{Binding FullName}" />
+          </DataTemplate>
+        </ComboBox.ItemTemplate>
+      </ComboBox>
+    </StackPanel>
+  </DockPanel>
+</UserControl>

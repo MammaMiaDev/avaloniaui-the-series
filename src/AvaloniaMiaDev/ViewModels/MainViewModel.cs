@@ -3,14 +3,26 @@ using System.Collections.ObjectModel;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
+using AvaloniaMiaDev.Messages;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging;
 
 namespace AvaloniaMiaDev.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
+    public MainViewModel(IMessenger messenger)
+    {
+        messenger.Register<MainViewModel, LoginSuccessMessage>(this, (_, message) =>
+        {
+            CurrentPage = new SecretViewModel(message.Value);
+        });
+    }
+
+    public MainViewModel() : this(new WeakReferenceMessenger()) { }
+
     [ObservableProperty]
     private bool _isPaneOpen;
 
@@ -41,6 +53,7 @@ public partial class MainViewModel : ViewModelBase
         new ListItemTemplate(typeof(ImagePageViewModel), "ImageRegular"),
         new ListItemTemplate(typeof(GridPageViewModel), "GridRegular"),
         new ListItemTemplate(typeof(DragAndDropPageViewModel), "TapDoubleRegular"),
+        new ListItemTemplate(typeof(LoginViewModel), "LockRegular"),
     };
 
     [RelayCommand]
