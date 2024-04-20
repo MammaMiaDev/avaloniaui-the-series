@@ -10,8 +10,10 @@ using CommunityToolkit.Mvvm.Messaging;
 
 namespace AvaloniaMiaDev.ViewModels;
 
-public partial class LoginPageViewModel : ViewModelBase
+public partial class LoginPageViewModel : ViewModelBase, ISplitViewIcon
 {
+    public string IconName => "LockRegular";
+
     [ObservableProperty] private string _errorMessage = "";
     [ObservableProperty] private string _username = "";
     [ObservableProperty] private string _password = "";

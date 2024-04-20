@@ -4,8 +4,9 @@ using AvaloniaMiaDev.Helpers;
 
 namespace AvaloniaMiaDev.ViewModels;
 
-public class ImagePageViewModel : ViewModelBase
+public class ImagePageViewModel : ViewModelBase, ISplitViewIcon
 {
+    public string IconName => "ImageRegular";
     public string ImageSourceString => "/Assets/Images/snow.jpg";
     public Bitmap ImageSourceBitmapLocal
         => ImageHelper.LoadFromResource("/Assets/Images/tiny_house.jpg");

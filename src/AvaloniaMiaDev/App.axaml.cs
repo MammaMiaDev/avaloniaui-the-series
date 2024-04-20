@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -52,16 +53,17 @@ public partial class App : Application
     }
 
     [Singleton(typeof(MainViewModel))]
-    [Transient(typeof(HomePageViewModel))]
-    [Transient(typeof(ButtonPageViewModel))]
-    [Transient(typeof(TextPageViewModel))]
-    [Transient(typeof(ValueSelectionPageViewModel))]
-    [Transient(typeof(ImagePageViewModel))]
-    [Singleton(typeof(GridPageViewModel))]
-    [Singleton(typeof(DragAndDropPageViewModel))]
+    [Transient(typeof(HomePageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ButtonPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(TextPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ValueSelectionPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ImagePageViewModel), typeof(ViewModelBase))]
+    [Singleton(typeof(GridPageViewModel), typeof(ViewModelBase))]
+    [Singleton(typeof(DragAndDropPageViewModel), typeof(ViewModelBase))]
     [Singleton(typeof(CustomSplashScreenViewModel))]
-    [Singleton(typeof(LoginPageViewModel))]
+    [Singleton(typeof(LoginPageViewModel), typeof(ViewModelBase))]
     [Singleton(typeof(SecretViewModel))]
+    [SuppressMessage("CommunityToolkit.Extensions.DependencyInjection.SourceGenerators.InvalidServiceRegistrationAnalyzer", "TKEXDI0004:Duplicate service type registration")]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
     [Singleton(typeof(MainWindow))]
