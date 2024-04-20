@@ -53,7 +53,7 @@ public partial class MainViewModel : ViewModelBase
         new ListItemTemplate(typeof(ImagePageViewModel), "ImageRegular"),
         new ListItemTemplate(typeof(GridPageViewModel), "GridRegular"),
         new ListItemTemplate(typeof(DragAndDropPageViewModel), "TapDoubleRegular"),
-        new ListItemTemplate(typeof(LoginViewModel), "LockRegular"),
+        new ListItemTemplate(typeof(LoginPageViewModel), "LockRegular"),
     };
 
     [RelayCommand]

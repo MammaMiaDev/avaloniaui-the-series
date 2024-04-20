@@ -60,7 +60,7 @@ public partial class App : Application
     [Singleton(typeof(GridPageViewModel))]
     [Singleton(typeof(DragAndDropPageViewModel))]
     [Singleton(typeof(CustomSplashScreenViewModel))]
-    [Singleton(typeof(LoginViewModel))]
+    [Singleton(typeof(LoginPageViewModel))]
     [Singleton(typeof(SecretViewModel))]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
@@ -73,7 +73,7 @@ public partial class App : Application
     [Transient(typeof(GridPageView))]
     [Transient(typeof(DragAndDropPageView))]
     [Transient(typeof(CustomSplashScreenView))]
-    [Transient(typeof(LoginView))]
+    [Transient(typeof(LoginPageView))]
     [Transient(typeof(SecretView))]
     internal static partial void ConfigureViews(IServiceCollection services);
 }

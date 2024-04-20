@@ -10,7 +10,7 @@ using CommunityToolkit.Mvvm.Messaging;
 
 namespace AvaloniaMiaDev.ViewModels;
 
-public partial class LoginViewModel : ViewModelBase
+public partial class LoginPageViewModel : ViewModelBase
 {
     [ObservableProperty] private string _errorMessage = "";
     [ObservableProperty] private string _username = "";
@@ -29,7 +29,7 @@ public partial class LoginViewModel : ViewModelBase
     private readonly ILoginService _loginService;
     private readonly IMessenger _messenger;
 
-    public LoginViewModel(ILoginService loginService, IMessenger messenger)
+    public LoginPageViewModel(ILoginService loginService, IMessenger messenger)
     {
         _loginService = loginService;
         _messenger = messenger;
@@ -37,7 +37,7 @@ public partial class LoginViewModel : ViewModelBase
     }
 
     // design only
-    public LoginViewModel() : this(new LoginService(new HttpClient { BaseAddress = new Uri("https://dummyjson.com/") }), new WeakReferenceMessenger()) { }
+    public LoginPageViewModel() : this(new LoginService(new HttpClient { BaseAddress = new Uri("https://dummyjson.com/") }), new WeakReferenceMessenger()) { }
 
     [RelayCommand]
     private async Task Login()
