@@ -13,20 +13,41 @@
   </Design.DataContext>
 
   <ScrollViewer>
-      <Grid RowDefinitions="Auto,*, *" Margin="20">
-        <TextBlock FontSize="20" FontWeight="Bold" Margin="0 0 0 20">Charts</TextBlock>
+      <Grid RowDefinitions="Auto,*, *" ColumnDefinitions="*, *" Margin="20">
+        <TextBlock FontSize="20" FontWeight="Bold" Margin="0 0 0 20" Text="Charts" Grid.ColumnSpan="2" />
 
-        <lvc:CartesianChart Grid.Row="1" BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
-                            Title="{Binding Title}" Series="{Binding Series}" Name="Chart" XAxes="{Binding XAxes}"
-                            Margin="0 0 0 10" Height="300"
-                            DataContext="{Binding LineChartViewModel}" />
-
-        <lvc:CartesianChart Grid.Row="2" DataContext="{Binding RaceChartViewModel}"
+        <lvc:CartesianChart Grid.Row="1" Grid.Column="0"  Margin="0 0 5 10" Height="300"
                             BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
+
+                            DataContext="{Binding LineChartViewModel}"
+                            Title="{Binding Title}"
+                            Series="{Binding Series}"
+                            Name="Chart" XAxes="{Binding XAxes}"
+                            />
+
+        <lvc:CartesianChart Grid.Row="2" Grid.Column="0" Margin="0 0 5 0" Height="300"
+                            BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
+
+                            DataContext="{Binding RaceChartViewModel}"
                             Series="{Binding Series}"
                             XAxes="{Binding XAxes}"
                             YAxes="{Binding YAxes}"
-                            TooltipPosition="Hidden" Height="300"/>
+                            TooltipPosition="Hidden"
+                            />
+
+        <lvc:CartesianChart Grid.Row="1" Grid.Column="1" Margin="5 0 0 10"
+                            BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
+
+                            />
+
+        <lvc:CartesianChart Grid.Row="2" Grid.Column="1" Margin="5 0 0 0"
+                            BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
+
+                            DataContext="{Binding LiveChartViewModel}"
+                            SyncContext="{Binding Sync}"
+                            Series="{Binding Series}"
+                            XAxes="{Binding XAxes}"
+                            />
       </Grid>
   </ScrollViewer>
 </UserControl>
