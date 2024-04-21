@@ -9,6 +9,8 @@ using AvaloniaMiaDev.Views;
 using CommunityToolkit.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Messaging;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AvaloniaMiaDev;
@@ -18,6 +20,10 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        LiveCharts.Configure(config =>
+                config
+                    .AddDarkTheme()
+        );
     }
 
     public override void OnFrameworkInitializationCompleted()
@@ -63,6 +69,7 @@ public partial class App : Application
     [Singleton(typeof(CustomSplashScreenViewModel))]
     [Singleton(typeof(LoginPageViewModel), typeof(ViewModelBase))]
     [Singleton(typeof(SecretViewModel))]
+    [Singleton(typeof(ChartsPageViewModel), typeof(ViewModelBase))]
     [SuppressMessage("CommunityToolkit.Extensions.DependencyInjection.SourceGenerators.InvalidServiceRegistrationAnalyzer", "TKEXDI0004:Duplicate service type registration")]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
@@ -77,5 +84,6 @@ public partial class App : Application
     [Transient(typeof(CustomSplashScreenView))]
     [Transient(typeof(LoginPageView))]
     [Transient(typeof(SecretView))]
+    [Transient(typeof(ChartsPageView))]
     internal static partial void ConfigureViews(IServiceCollection services);
 }

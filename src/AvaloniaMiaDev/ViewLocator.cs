@@ -26,6 +26,7 @@ public class ViewLocator : IDataTemplate
         RegisterViewFactory<CustomSplashScreenViewModel, CustomSplashScreenView>();
         RegisterViewFactory<LoginPageViewModel, LoginPageView>();
         RegisterViewFactory<SecretViewModel, SecretView>();
+        RegisterViewFactory<ChartsPageViewModel, ChartsPageView>();
     }
 
     public Control Build(object? data)

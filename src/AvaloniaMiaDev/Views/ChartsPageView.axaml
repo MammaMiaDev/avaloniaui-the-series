@@ -1,0 +1,32 @@
+﻿<UserControl xmlns="https://github.com/avaloniaui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:lvc="using:LiveChartsCore.SkiaSharpView.Avalonia"
+             mc:Ignorable="d" d:DesignWidth="500" d:DesignHeight="450"
+             x:Class="AvaloniaMiaDev.Views.ChartsPageView"
+             x:DataType="viewModels:ChartsPageViewModel">
+
+  <Design.DataContext>
+    <viewModels:ChartsPageViewModel />
+  </Design.DataContext>
+
+  <ScrollViewer>
+      <Grid RowDefinitions="Auto,*, *" Margin="20">
+        <TextBlock FontSize="20" FontWeight="Bold" Margin="0 0 0 20">Charts</TextBlock>
+
+        <lvc:CartesianChart Grid.Row="1" BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
+                            Title="{Binding Title}" Series="{Binding Series}" Name="Chart" XAxes="{Binding XAxes}"
+                            Margin="0 0 0 10" Height="300"
+                            DataContext="{Binding LineChartViewModel}" />
+
+        <lvc:CartesianChart Grid.Row="2" DataContext="{Binding RaceChartViewModel}"
+                            BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
+                            Series="{Binding Series}"
+                            XAxes="{Binding XAxes}"
+                            YAxes="{Binding YAxes}"
+                            TooltipPosition="Hidden" Height="300"/>
+      </Grid>
+  </ScrollViewer>
+</UserControl>

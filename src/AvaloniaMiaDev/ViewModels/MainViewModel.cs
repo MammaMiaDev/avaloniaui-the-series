@@ -26,6 +26,8 @@ public partial class MainViewModel : ViewModelBase
 
         Items = new ObservableCollection<ListItemTemplate>(
             _viewModels.Select(vm => new ListItemTemplate(vm.GetType(), ((ISplitViewIcon)vm).IconName)));
+
+        SelectedListItem = Items.First(vm => vm.ModelType == typeof(HomePageViewModel));
     }
 
     public MainViewModel() : this(new WeakReferenceMessenger(), [new HomePageViewModel()]) { }
