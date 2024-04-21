@@ -18,7 +18,7 @@ public partial class MainViewModel : ViewModelBase
 
     public MainViewModel(IMessenger messenger, IEnumerable<ViewModelBase> viewModels)
     {
-        _viewModels = viewModels.ToList();
+        _viewModels = viewModels.OrderBy(vm => GetOrderIndex(vm.GetType(), _predefinedOrder)).ToList();
         messenger.Register<MainViewModel, LoginSuccessMessage>(this, (_, message) =>
         {
             CurrentPage = new SecretViewModel(message.Value);
@@ -27,7 +27,27 @@ public partial class MainViewModel : ViewModelBase
         Items = new ObservableCollection<ListItemTemplate>(
             _viewModels.Select(vm => new ListItemTemplate(vm.GetType(), ((ISplitViewIcon)vm).IconName)));
 
-        SelectedListItem = Items.First(vm => vm.ModelType == typeof(HomePageViewModel));
+        SelectedListItem = Items.First(vm => vm.ModelType == typeof(ChartsPageViewModel));
+    }
+
+    // Function to get the index of a string in the predefined order
+    private readonly List<Type> _predefinedOrder =
+    [
+        typeof(HomePageViewModel),
+        typeof(ButtonPageViewModel),
+        typeof(TextPageViewModel),
+        typeof(ValueSelectionPageViewModel),
+        typeof(ImagePageViewModel),
+        typeof(GridPageViewModel),
+        typeof(DragAndDropPageViewModel),
+        typeof(LoginPageViewModel),
+        typeof(ChartsPageViewModel),
+    ];
+
+    private static int GetOrderIndex(Type value, List<Type> order)
+    {
+        var index = order.IndexOf(value);
+        return index >= 0 ? index : int.MaxValue; // Assign a high value if not in predefined order
     }
 
     public MainViewModel() : this(new WeakReferenceMessenger(), [new HomePageViewModel()]) { }
