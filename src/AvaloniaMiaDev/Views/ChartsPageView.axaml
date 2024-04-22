@@ -20,9 +20,9 @@
                             BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
 
                             DataContext="{Binding LineChartViewModel}"
-                            Title="{Binding Title}"
                             Series="{Binding Series}"
-                            Name="Chart" XAxes="{Binding XAxes}"
+                            Title="{Binding Title}"
+                            XAxes="{Binding XAxes}"
                             />
 
         <lvc:CartesianChart Grid.Row="2" Grid.Column="0" Margin="0 0 5 0"
