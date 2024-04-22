@@ -26,7 +26,7 @@ public record WeatherForecast(DateOnly Date, int Temperature)
     ];
 }
 
-public class LineChartViewModel : ViewModelBase
+public class LineChartViewModel
 {
     public LabelVisual Title { get; set; } =
         new()
