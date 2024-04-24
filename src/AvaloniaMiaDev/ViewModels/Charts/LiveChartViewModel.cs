@@ -52,9 +52,6 @@ public class LiveChartViewModel
 
     private async Task StartReadData()
     {
-        // to keep this sample simple, we run the next infinite loop
-        // in a real application you should stop the loop/task when the view is disposed
-
         while (_canRun)
         {
             await Task.Delay(100);
