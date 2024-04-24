@@ -1,17 +1,14 @@
 ﻿using System;
 using System.Linq;
 using System.Threading.Tasks;
-using CommunityToolkit.Mvvm.Input;
 using LiveChartsCore.Geo;
 using LiveChartsCore.SkiaSharpView;
 using LiveChartsCore.SkiaSharpView.Drawing.Geometries;
 
 namespace AvaloniaMiaDev.ViewModels.Charts;
 
-public partial class WorldHeatMapViewModel
+public class WorldHeatMapViewModel
 {
-    private bool _isBrazilInChart = true;
-    private readonly IWeigthedMapLand _brazil;
     private readonly Random _r = new();
 
     public WorldHeatMapViewModel()
@@ -40,28 +37,10 @@ public partial class WorldHeatMapViewModel
 
         Series = [new HeatLandSeries { Lands = lands }];
 
-        _brazil = lands.First(x => x.Name == "bra");
         DoRandomChanges();
     }
 
     public HeatLandSeries[] Series { get; set; }
-
-    [RelayCommand]
-    public void ToggleBrazil()
-    {
-        var lands = Series[0].Lands;
-        if (lands is null) return;
-
-        if (_isBrazilInChart)
-        {
-            Series[0].Lands = lands.Where(x => x != _brazil).ToArray();
-            _isBrazilInChart = false;
-            return;
-        }
-
-        Series[0].Lands = lands.Concat(new[] { _brazil }).ToArray();
-        _isBrazilInChart = true;
-    }
 
     private async void DoRandomChanges()
     {
