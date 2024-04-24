@@ -13,10 +13,10 @@
   </Design.DataContext>
 
   <ScrollViewer>
-      <Grid RowDefinitions="Auto,*, *" ColumnDefinitions="*, *" Margin="20">
+      <Grid RowDefinitions="Auto, Auto, Auto, Auto, Auto" Margin="20">
         <TextBlock FontSize="20" FontWeight="Bold" Margin="0 0 0 20" Text="Charts" Grid.ColumnSpan="2" />
 
-        <lvc:CartesianChart Grid.Row="1" Grid.Column="0"  Margin="0 0 5 10"
+        <lvc:CartesianChart Grid.Row="1" Margin="0 0 0 5" Height="300"
                             BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
 
                             DataContext="{Binding LineChartViewModel}"
@@ -25,7 +25,7 @@
                             XAxes="{Binding XAxes}"
                             />
 
-        <lvc:CartesianChart Grid.Row="2" Grid.Column="0" Margin="0 0 5 0"
+        <lvc:CartesianChart Grid.Row="2" Margin="0 5 0 5" Height="300"
                             BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
 
                             DataContext="{Binding RaceChartViewModel}"
@@ -35,14 +35,14 @@
                             TooltipPosition="Hidden"
                             />
 
-        <lvc:GeoMap Grid.Row="1" Grid.Column="1" Margin="5 0 0 10"
+        <lvc:GeoMap Grid.Row="3" Margin="0 5 0 5" Height="300"
                     BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
 
                     DataContext="{Binding WorldHeatMapViewModel}"
                     Series="{Binding Series}" MapProjection="Mercator"
                     />
 
-        <lvc:CartesianChart Grid.Row="2" Grid.Column="1" Margin="5 0 0 0"
+        <lvc:CartesianChart Grid.Row="4" Margin="0 5 0 5" Height="300"
                             BorderThickness="2" BorderBrush="WhiteSmoke" CornerRadius="10"
 
                             DataContext="{Binding LiveChartViewModel}"
