@@ -27,7 +27,7 @@ public partial class MainViewModel : ViewModelBase
         Items = new ObservableCollection<ListItemTemplate>(
             _viewModels.Select(vm => new ListItemTemplate(vm.GetType(), ((ISplitViewIcon)vm).IconName)));
 
-        SelectedListItem = Items.First(vm => vm.ModelType == typeof(ChartsPageViewModel));
+        SelectedListItem = Items.First(vm => vm.ModelType == typeof(HomePageViewModel));
     }
 
     // Function to get the index of a string in the predefined order
