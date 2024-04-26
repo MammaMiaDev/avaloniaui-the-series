@@ -1,11 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Linq;
 using Avalonia;
 using Avalonia.Controls;
 using Avalonia.Media;
 using AvaloniaMiaDev.Messages;
 using CommunityToolkit.Mvvm.ComponentModel;
-using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 
@@ -13,15 +14,43 @@ namespace AvaloniaMiaDev.ViewModels;
 
 public partial class MainViewModel : ViewModelBase
 {
-    public MainViewModel(IMessenger messenger)
+    private readonly IReadOnlyList<ViewModelBase> _viewModels;
+
+    public MainViewModel(IMessenger messenger, IEnumerable<ViewModelBase> viewModels)
     {
+        _viewModels = viewModels.OrderBy(vm => GetOrderIndex(vm.GetType(), _predefinedOrder)).ToList();
         messenger.Register<MainViewModel, LoginSuccessMessage>(this, (_, message) =>
         {
             CurrentPage = new SecretViewModel(message.Value);
         });
+
+        Items = new ObservableCollection<ListItemTemplate>(
+            _viewModels.Select(vm => new ListItemTemplate(vm.GetType(), ((ISplitViewIcon)vm).IconName)));
+
+        SelectedListItem = Items.First(vm => vm.ModelType == typeof(HomePageViewModel));
     }
 
-    public MainViewModel() : this(new WeakReferenceMessenger()) { }
+    // Function to get the index of a string in the predefined order
+    private readonly List<Type> _predefinedOrder =
+    [
+        typeof(HomePageViewModel),
+        typeof(ButtonPageViewModel),
+        typeof(TextPageViewModel),
+        typeof(ValueSelectionPageViewModel),
+        typeof(ImagePageViewModel),
+        typeof(GridPageViewModel),
+        typeof(DragAndDropPageViewModel),
+        typeof(LoginPageViewModel),
+        typeof(ChartsPageViewModel),
+    ];
+
+    private static int GetOrderIndex(Type value, List<Type> order)
+    {
+        var index = order.IndexOf(value);
+        return index >= 0 ? index : int.MaxValue; // Assign a high value if not in predefined order
+    }
+
+    public MainViewModel() : this(new WeakReferenceMessenger(), [new HomePageViewModel()]) { }
 
     [ObservableProperty]
     private bool _isPaneOpen;
@@ -36,25 +65,10 @@ public partial class MainViewModel : ViewModelBase
     {
         if (value is null) return;
 
-        var instance = Design.IsDesignMode
-            ? Activator.CreateInstance(value.ModelType)
-            : Ioc.Default.GetService(value.ModelType);
-
-        if (instance is null) return;
-        CurrentPage = (ViewModelBase)instance;
+        CurrentPage = _viewModels.First(vm => vm.GetType() == value.ModelType);
     }
 
-    public ObservableCollection<ListItemTemplate> Items { get; } = new()
-    {
-        new ListItemTemplate(typeof(HomePageViewModel), "HomeRegular"),
-        new ListItemTemplate(typeof(ButtonPageViewModel), "CursorHoverRegular"),
-        new ListItemTemplate(typeof(TextPageViewModel), "TextNumberFormatRegular"),
-        new ListItemTemplate(typeof(ValueSelectionPageViewModel), "CalendarCheckmarkRegular"),
-        new ListItemTemplate(typeof(ImagePageViewModel), "ImageRegular"),
-        new ListItemTemplate(typeof(GridPageViewModel), "GridRegular"),
-        new ListItemTemplate(typeof(DragAndDropPageViewModel), "TapDoubleRegular"),
-        new ListItemTemplate(typeof(LoginViewModel), "LockRegular"),
-    };
+    public ObservableCollection<ListItemTemplate> Items { get; }
 
     [RelayCommand]
     private void TriggerPane()

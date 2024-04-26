@@ -4,8 +4,8 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:vm="clr-namespace:AvaloniaMiaDev.ViewModels"
              mc:Ignorable="d" d:DesignWidth="540" d:DesignHeight="960"
-             x:Class="AvaloniaMiaDev.Views.LoginView"
-             x:DataType="vm:LoginViewModel">
+             x:Class="AvaloniaMiaDev.Views.LoginPageView"
+             x:DataType="vm:LoginPageViewModel">
   <DockPanel Margin="10">
     <!-- TOP -->
     <TextBlock Text="Login" DockPanel.Dock="Top" HorizontalAlignment="Center" VerticalAlignment="Center"

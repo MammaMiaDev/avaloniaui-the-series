@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics.CodeAnalysis;
 using Avalonia;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
@@ -8,6 +9,8 @@ using AvaloniaMiaDev.Views;
 using CommunityToolkit.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Messaging;
+using LiveChartsCore;
+using LiveChartsCore.SkiaSharpView;
 using Microsoft.Extensions.DependencyInjection;
 
 namespace AvaloniaMiaDev;
@@ -17,6 +20,10 @@ public partial class App : Application
     public override void Initialize()
     {
         AvaloniaXamlLoader.Load(this);
+        LiveCharts.Configure(config =>
+                config
+                    .AddDarkTheme()
+        );
     }
 
     public override void OnFrameworkInitializationCompleted()
@@ -52,16 +59,18 @@ public partial class App : Application
     }
 
     [Singleton(typeof(MainViewModel))]
-    [Transient(typeof(HomePageViewModel))]
-    [Transient(typeof(ButtonPageViewModel))]
-    [Transient(typeof(TextPageViewModel))]
-    [Transient(typeof(ValueSelectionPageViewModel))]
-    [Transient(typeof(ImagePageViewModel))]
-    [Singleton(typeof(GridPageViewModel))]
-    [Singleton(typeof(DragAndDropPageViewModel))]
+    [Transient(typeof(HomePageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ButtonPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(TextPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ValueSelectionPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ImagePageViewModel), typeof(ViewModelBase))]
+    [Singleton(typeof(GridPageViewModel), typeof(ViewModelBase))]
+    [Singleton(typeof(DragAndDropPageViewModel), typeof(ViewModelBase))]
     [Singleton(typeof(CustomSplashScreenViewModel))]
-    [Singleton(typeof(LoginViewModel))]
+    [Singleton(typeof(LoginPageViewModel), typeof(ViewModelBase))]
     [Singleton(typeof(SecretViewModel))]
+    [Singleton(typeof(ChartsPageViewModel), typeof(ViewModelBase))]
+    [SuppressMessage("CommunityToolkit.Extensions.DependencyInjection.SourceGenerators.InvalidServiceRegistrationAnalyzer", "TKEXDI0004:Duplicate service type registration")]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 
     [Singleton(typeof(MainWindow))]
@@ -73,7 +82,8 @@ public partial class App : Application
     [Transient(typeof(GridPageView))]
     [Transient(typeof(DragAndDropPageView))]
     [Transient(typeof(CustomSplashScreenView))]
-    [Transient(typeof(LoginView))]
+    [Transient(typeof(LoginPageView))]
     [Transient(typeof(SecretView))]
+    [Transient(typeof(ChartsPageView))]
     internal static partial void ConfigureViews(IServiceCollection services);
 }
