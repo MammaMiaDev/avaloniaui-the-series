@@ -5,6 +5,7 @@ using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Markup.Xaml;
 using AvaloniaMiaDev.Services;
 using AvaloniaMiaDev.ViewModels;
+using AvaloniaMiaDev.ViewModels.SplitViewPane;
 using AvaloniaMiaDev.Views;
 using CommunityToolkit.Extensions.DependencyInjection;
 using CommunityToolkit.Mvvm.DependencyInjection;
@@ -59,17 +60,17 @@ public partial class App : Application
     }
 
     [Singleton(typeof(MainViewModel))]
-    [Transient(typeof(HomePageViewModel), typeof(ViewModelBase))]
-    [Transient(typeof(ButtonPageViewModel), typeof(ViewModelBase))]
-    [Transient(typeof(TextPageViewModel), typeof(ViewModelBase))]
-    [Transient(typeof(ValueSelectionPageViewModel), typeof(ViewModelBase))]
-    [Transient(typeof(ImagePageViewModel), typeof(ViewModelBase))]
-    [Singleton(typeof(GridPageViewModel), typeof(ViewModelBase))]
-    [Singleton(typeof(DragAndDropPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(HomePageViewModel))]
+    [Transient(typeof(ButtonPageViewModel))]
+    [Transient(typeof(TextPageViewModel))]
+    [Transient(typeof(ValueSelectionPageViewModel))]
+    [Transient(typeof(ImagePageViewModel))]
+    [Singleton(typeof(GridPageViewModel))]
+    [Singleton(typeof(DragAndDropPageViewModel))]
     [Singleton(typeof(CustomSplashScreenViewModel))]
-    [Singleton(typeof(LoginPageViewModel), typeof(ViewModelBase))]
+    [Singleton(typeof(LoginPageViewModel))]
     [Singleton(typeof(SecretViewModel))]
-    [Singleton(typeof(ChartsPageViewModel), typeof(ViewModelBase))]
+    [Transient(typeof(ChartsPageViewModel))]
     [SuppressMessage("CommunityToolkit.Extensions.DependencyInjection.SourceGenerators.InvalidServiceRegistrationAnalyzer", "TKEXDI0004:Duplicate service type registration")]
     internal static partial void ConfigureViewModels(IServiceCollection services);
 

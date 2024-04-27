@@ -1,11 +1,9 @@
 ﻿using AvaloniaMiaDev.ViewModels.Charts;
 
-namespace AvaloniaMiaDev.ViewModels;
+namespace AvaloniaMiaDev.ViewModels.SplitViewPane;
 
-public class ChartsPageViewModel : ViewModelBase, ISplitViewIcon
+public class ChartsPageViewModel : ViewModelBase
 {
-    public string IconName => "PollRegular";
-
     public LineChartViewModel LineChartViewModel { get; } = new();
     public RaceChartViewModel RaceChartViewModel { get; } = new();
     public WorldHeatMapViewModel WorldHeatMapViewModel { get; } = new();

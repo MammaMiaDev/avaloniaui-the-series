@@ -90,7 +90,7 @@ public partial class RaceChartViewModel : ViewModelBase
 
     private async Task StartRace()
     {
-        await Task.Delay(1000);
+        await Task.Delay(500);
 
         while (_canRun)
         {

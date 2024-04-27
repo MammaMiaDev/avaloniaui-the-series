@@ -2,11 +2,10 @@
 using Avalonia.Media.Imaging;
 using AvaloniaMiaDev.Helpers;
 
-namespace AvaloniaMiaDev.ViewModels;
+namespace AvaloniaMiaDev.ViewModels.SplitViewPane;
 
-public class ImagePageViewModel : ViewModelBase, ISplitViewIcon
+public class ImagePageViewModel : ViewModelBase
 {
-    public string IconName => "ImageRegular";
     public string ImageSourceString => "/Assets/Images/snow.jpg";
     public Bitmap ImageSourceBitmapLocal
         => ImageHelper.LoadFromResource("/Assets/Images/tiny_house.jpg");

@@ -4,11 +4,10 @@ using System.Linq;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 
-namespace AvaloniaMiaDev.ViewModels;
+namespace AvaloniaMiaDev.ViewModels.SplitViewPane;
 
-public partial class DragAndDropPageViewModel : ViewModelBase, ISplitViewIcon
+public partial class DragAndDropPageViewModel : ViewModelBase
 {
-    public string IconName => "TapDoubleRegular";
     public const string CustomFormat = "task-item-format";
     private int _count;
 

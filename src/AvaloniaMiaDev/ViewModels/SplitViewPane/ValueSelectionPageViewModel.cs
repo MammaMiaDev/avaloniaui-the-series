@@ -1,11 +1,9 @@
 using CommunityToolkit.Mvvm.ComponentModel;
 
-namespace AvaloniaMiaDev.ViewModels;
+namespace AvaloniaMiaDev.ViewModels.SplitViewPane;
 
-public partial class ValueSelectionPageViewModel : ViewModelBase, ISplitViewIcon
+public partial class ValueSelectionPageViewModel : ViewModelBase
 {
-    public string IconName => "CalendarCheckmarkRegular";
-
     [ObservableProperty]
     private bool _isValueSelectionEnabled = true;
 

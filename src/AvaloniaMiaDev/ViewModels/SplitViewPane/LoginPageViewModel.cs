@@ -8,12 +8,10 @@ using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.Input;
 using CommunityToolkit.Mvvm.Messaging;
 
-namespace AvaloniaMiaDev.ViewModels;
+namespace AvaloniaMiaDev.ViewModels.SplitViewPane;
 
-public partial class LoginPageViewModel : ViewModelBase, ISplitViewIcon
+public partial class LoginPageViewModel : ViewModelBase
 {
-    public string IconName => "LockRegular";
-
     [ObservableProperty] private string _errorMessage = "";
     [ObservableProperty] private string _username = "";
     [ObservableProperty] private string _password = "";

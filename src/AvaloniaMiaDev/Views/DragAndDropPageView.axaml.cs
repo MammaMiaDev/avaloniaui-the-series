@@ -4,7 +4,7 @@ using Avalonia.Controls;
 using Avalonia.Input;
 using Avalonia.Interactivity;
 using Avalonia.Media;
-using AvaloniaMiaDev.ViewModels;
+using AvaloniaMiaDev.ViewModels.SplitViewPane;
 
 namespace AvaloniaMiaDev.Views;
 

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Avalonia.Controls;
 using Avalonia.Controls.Templates;
 using AvaloniaMiaDev.ViewModels;
+using AvaloniaMiaDev.ViewModels.SplitViewPane;
 using AvaloniaMiaDev.Views;
 using CommunityToolkit.Mvvm.ComponentModel;
 using CommunityToolkit.Mvvm.DependencyInjection;
