@@ -3,6 +3,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              xmlns:viewModels="clr-namespace:AvaloniaMiaDev.ViewModels"
+             xmlns:converters="clr-namespace:AvaloniaMiaDev.Converters"
              xmlns:models="clr-namespace:AvaloniaMiaDev.Models"
              mc:Ignorable="d" d:DesignWidth="450" d:DesignHeight="700"
              x:Class="AvaloniaMiaDev.Views.MainView"
@@ -39,7 +40,8 @@
           <ListBox.ItemTemplate>
             <DataTemplate DataType="{x:Type models:ListItemTemplate}">
               <StackPanel Spacing="17" Orientation="Horizontal">
-                <PathIcon Data="{Binding ListItemIcon}" Width="14" />
+                <PathIcon Data="{Binding IconKey, Converter={x:Static converters:TypeConverters.IconConverter}}"
+                          Width="14" />
                 <TextBlock Text="{Binding Label}" />
               </StackPanel>
             </DataTemplate>
